@@ -370,8 +370,8 @@ const user=localStorage.getItem('username');
     })
     return (
         <div>
-            <section className="homepage_tab position-relative">
-                <div className="section1 container" style={{ marginTop: "40px" }}>
+            <section className="homepage_tab position-relative" >
+                <div className="section1 container" style={{ marginTop: "80px" }}>
                     <div className="row1 justify-content-center">
                         <div className="col-lg-8 mb-4">
                             <div className="section-title1 text-center">

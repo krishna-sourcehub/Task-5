@@ -7,7 +7,12 @@ const Crypto_Transfer = () => {
     const display=localStorage.getItem('displayvalue');
 const user=localStorage.getItem('username');
 
-
+document.body.style.overflow = 'visible';
+document.body.scrollIntoView({
+    behavior:'smooth',
+    block:'center',
+    inline:'center'
+})
 
     const [inputValue, setInputValue] = useState('');
     const [selectedOption2, setSelectedOption2] = useState('');
@@ -476,7 +481,7 @@ const user=localStorage.getItem('username');
     return (
         <div>
             <section className="homepage_tab position-relative">
-                <div className="section1 container"style={{ marginTop: "40px" }}>
+                <div className="section1 container"style={{ marginTop: "80px" }}>
                     <div className="row1 justify-content-center">
                         <div className="col-lg-8 mb-4">
                             <div className="section-title1 text-center">
