@@ -24,7 +24,7 @@ import Tracking from "./Tracking.jsx";
 import UPI_Transfer from "./UPI_Transfer";
 import Navigation from "./navigation.jsx";
 export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
+  speed: 100,
   speedAsDuration: true,
 });
 
