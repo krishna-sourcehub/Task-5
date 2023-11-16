@@ -1,0 +1,42 @@
+.custom-step-progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-step-progress-bar {
+  display: flex;
+  position: relative;
+
+}
+
+.custom-step {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 40%;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  
+}
+
+.custom-step:hover {
+  background-color:white;
+  color: #5ca9fb; /* A1dd your desired hover background color */
+
+}
+
+.completed {
+  background-color: rgba(92, 169, 251, 0.9); /* Add your desired completed step color */
+  color: white;
+}
+
+.progress-line {
+  height: 4px;
+  background-color: #5ca9fb; /* Color of the progress line */
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  z-index: -1;
+  transition: width 1s ease-in-out;
+}

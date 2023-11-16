@@ -1,0 +1,184 @@
+{
+  "Header": {
+    "title": "EasyPay Express",
+    "paragraph": "Connecting Currencies, Connecting Lives, The Future of Money Transfers"
+  },
+  "About": {
+    "paragraph": "At EasyPay Express, we are committed to providing seamless financial solutions tailored to your needs. Our user-friendly platform ensures efficient money transfers, making transactions a breeze. With state-of-the-art security features, your financial data is safeguarded, and our real-time tracking ensures transparency and peace of mind. Experience the future of hassle-free money management with EasyPay Express.",
+    "Why": [
+      "Transparent Fees",
+      "Global Accessibility",
+      "International Services",
+      "Multi-Currencies Support"
+    ],
+    "Why2": [
+      "User-Friendly Interface",
+      "Customer-Centric Support",
+      "Cryptocurrency Support",
+      "Wallet Support"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Customer Support",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Customize Interface",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Currency Exchange",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Transaction Tracking",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Mobile Wallet",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Global Accessibility",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Financial Analytics",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Device Friendly",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Seamless Services",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-wordpress",
+      "name": "Mobile Wallet Integration",
+      "text": "Link your mobile wallet for quick and easy transfers, allowing you to manage your finances directly from your mobile device."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Bank-to-Bank Transfers",
+      "text": "Facilitate secure transactions between bank accounts, ensuring a direct and reliable transfer of funds."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Currency Exchange",
+      "text": "Access a wide range of currencies for exchange, enabling you to transfer money internationally with ease and flexibility."
+    },
+    {
+      "icon": "fa fa-language",
+      "name": "Bill Payments",
+      "text": "Conveniently pay bills directly through the money transfer platform, saving time and streamlining your financial tasks."
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "Automatic Recurring Transfers",
+      "text": "Set up recurring transfers for regular payments, automating financial transactions for convenience and reliability."
+    },
+    {
+      "icon": "fa fa-pie-chart",
+      "name": "Transaction Tracking and Alerts",
+      "text": "Stay informed about every transaction with real-time tracking and receive alerts for added transparency and security."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"The money transfer service provided by this platform is exceptional! Quick, reliable, and secure. I highly recommend it to anyone needing efficient financial transactions.\"",
+      "name": " John D"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"I've been using this money transfer website for years, and it's been a game-changer. The intuitive interface, coupled with excellent customer support, makes it my go-to choice.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"What I love about this platform is its versatility. From international transfers to bill payments, it covers all my financial needs, making it a one-stop solution.\"",
+      "name": " Michael K"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"The currency exchange and cash pickup options add to the overall flexibility.The features like automatic recurring transfers and real-time tracking. \"",
+      "name": "Sarah M"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"This money transfer website truly understands the importance of security and convenience. The currency exchange and cash pickup options add to the overall flexibility.\"",
+      "name": "David S"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"The features like automatic recurring transfers and real-time tracking have simplified my financial management. It's a trustworthy service that I rely on for all my transactions.\"",
+      "name": "Emily L"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345 ",
+    "phone": "+1 123 456 1234",
+    "email": "EasyPay@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Mobile Accessibility",
+      "text": "Access the platform on the go with a mobile-friendly interface, making money transfers convenient and accessible."
+    },
+    {
+      "icon": "fa fa-bullhorn",
+      "title": "Global Reach",
+      "text": "Connect with loved ones worldwide by sending money across borders, reaching destinations far and wide."
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "User-Friendly Interface",
+      "text": "Navigate effortlessly through a user-friendly platform designed for easy and intuitive money transfers."
+    },
+    {
+      "icon": "fa fa-magic",
+      "title": "Instant Transfers",
+      "text": "Experience swift and hassle-free money transfers in real-time, ensuring your funds reach their destination instantly."
+    }
+  ]
+}
