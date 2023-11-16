@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import SmoothScroll from "smooth-scroll";
 import JsonData from "../data/data.json";
 import Aadhar_Transfer from "./Aadhar_transfer";
@@ -24,16 +24,12 @@ import Tracking from "./Tracking.jsx";
 import UPI_Transfer from "./UPI_Transfer";
 import Navigation from "./navigation.jsx";
 export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 100,
+  speed: 1000,
   speedAsDuration: true,
 });
 
 const App = () => {
-  const [data, setdata]=useState({
-    id:"1",
-    title:"hello",
-    desc:"everyone"
-  });
+ 
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
     setLandingPageData(JsonData);
@@ -43,11 +39,6 @@ const App = () => {
 
   return (
     <div>
-    <div>
-      <Link to='/'>home</Link>
-
-      <Link to='/History' state={{data:data}}>table</Link>
-    </div>
       <Navigation />
       <Routes>
         <Route index path="/" element={<Home />} />
