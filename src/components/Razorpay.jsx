@@ -485,7 +485,6 @@ const Razorpay = () => {
     return (
 
         <div>
-
             <div>
                 <section className="homepage_tab position-relative">
                     <div className="section1 container" style={{ marginTop: "80px" }}>
