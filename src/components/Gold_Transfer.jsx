@@ -265,7 +265,7 @@ const user=localStorage.getItem('username');
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + senderNumber, // Make sure senderNumber is defined
                     message: otpMessage,
@@ -280,6 +280,9 @@ const user=localStorage.getItem('username');
 
             alert("OTP sent successfully");
         } catch (err) {
+            if(err.status==.500){
+                alert("this free Service only for register numbers");
+            }
             alert("OTP send failed, please check Server");
         }
     };
@@ -297,6 +300,7 @@ const user=localStorage.getItem('username');
             localStorage.removeItem('displayvalue');
             navigate('/Sucess');
         } else {
+
             alert("Invalid OTP. Please try again.");
         }
     };
@@ -306,7 +310,7 @@ const user=localStorage.getItem('username');
 
     async function save(event) {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails", {
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails", {
                 username: user,
                 from: senderName,
                 to: recipientName,
@@ -331,8 +335,7 @@ const user=localStorage.getItem('username');
     }
 
     async function sendmail() {
-        // alert("time and date:" + currentDate, currentTime);
-        // alert("email");
+
         var subject = "Money Transfer Acknowledgement";
         var body =
             "Hello " +
@@ -367,7 +370,7 @@ const user=localStorage.getItem('username');
             "\nStatus: Success";
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: recipientMail,
                     subject: body,
@@ -417,7 +420,7 @@ const user=localStorage.getItem('username');
 
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: senderMail,
                     subject: body,

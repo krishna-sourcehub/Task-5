@@ -9,6 +9,7 @@ const Email_Transfer = () => {
     const display=localStorage.getItem('displayvalue');
 const user=localStorage.getItem('username');
 
+document.body.style.overflow = 'visible';
 
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -194,7 +195,7 @@ const user=localStorage.getItem('username');
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91"+senderNumber,  // Make sure senderNumber is defined
                     message: otpMessage,
@@ -209,6 +210,9 @@ const user=localStorage.getItem('username');
 
             alert("OTP sent successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("OTP send failed, please check Server");
         }
     };
@@ -244,7 +248,7 @@ const user=localStorage.getItem('username');
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91"+recipientNumber,  // Make sure senderNumber is defined
                     message: moneyMessage,
@@ -269,7 +273,7 @@ const user=localStorage.getItem('username');
     async function save(event) {
   
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails",
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails",
                 {
                     username: user,
                     from: senderName,
@@ -305,7 +309,7 @@ const user=localStorage.getItem('username');
         var body = "Hello " + recipientName + ",\n INR "+ amount + "credit to your Mail Id, from Mail ID "+ senderMail + " through Easy Express.\nDate: " + currentDate + "\nTime: " + currentISTTime + "\nSender Name: " + senderName + "\nSender Account: " + senderAccount + "\nSender Number: " + senderNumber + "\nRecipent Name: " + recipientName + "\nRecipent Account: " + recipientAccount + "\nAmount: " + amount + "\nType: " + type + "\nDescription: " + shortDescription + "\nStatus: Success";
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: recipientMail,
                     subject: body,
@@ -329,7 +333,7 @@ const user=localStorage.getItem('username');
 
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: senderMail,
                     subject: body,
@@ -356,12 +360,6 @@ const user=localStorage.getItem('username');
     }
 
 
-    document.body.style.overflow = 'hidden';
-    document.body.scrollIntoView({
-        behavior:'smooth',
-        block:'center',
-        inline:'center'
-    })
     return (
         <div>
             <section className="homepage_tab position-relative">

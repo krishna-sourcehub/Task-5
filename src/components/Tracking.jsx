@@ -43,8 +43,8 @@ const Tracking = () => {
   const [city, setcity] = useState("");
   const [userinfos, setUsers] = useState("");
 
-  const getall = "http://localhost:8881/api/users/getUserTransaction/" + transactionid;
-
+  // const getall = "http://localhost:8881/api/users/getUserTransaction/" + transactionid;
+  const getall = "https://easypayexpress.onrender.com/api/users/getUserTransaction/" + transactionid;
   async function Load() {
    
     try {

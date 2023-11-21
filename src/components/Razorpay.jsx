@@ -257,7 +257,7 @@ const Razorpay = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + senderNumber, // Make sure senderNumber is defined
                     message: otpMessage,
@@ -272,6 +272,9 @@ const Razorpay = () => {
 
             alert("OTP sent successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("OTP send failed, please check Server");
         }
     };
@@ -301,7 +304,7 @@ const Razorpay = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + recipientNumber, // Make sure senderNumber is defined
                     message: moneyMessage,
@@ -316,6 +319,9 @@ const Razorpay = () => {
 
             alert("Recipient SMS send successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("Recipient SMS send failed, please check Server");
         }
     };
@@ -324,7 +330,7 @@ const Razorpay = () => {
 
     async function save(event) {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails", {
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails", {
                 username: user,
                 from: senderName,
                 to: recipientName,
@@ -378,7 +384,7 @@ const Razorpay = () => {
             "\nStatus: Success";
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: recipientMail,
                     subject: body,
@@ -424,7 +430,7 @@ const Razorpay = () => {
 
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: senderMail,
                     subject: body,

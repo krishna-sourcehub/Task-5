@@ -34,8 +34,11 @@ const App = () => {
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
- 
+ const login=localStorage.getItem('username');
 
+if(!login){
+alert(" Welcome to EasyPay Service, please sign up and use the Money Transfer Services");}
+ 
 
   return (
     <div>

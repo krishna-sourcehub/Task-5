@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Mobile_Number_Transfer = () => {
 
-    const displayvalue=true;
-    const display=localStorage.getItem('displayvalue');
-    const user=localStorage.getItem('username');
+    const displayvalue = true;
+    const display = localStorage.getItem('displayvalue');
+    const user = localStorage.getItem('username');
+    document.body.style.overflow = 'visible';
 
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -150,17 +151,17 @@ const Mobile_Number_Transfer = () => {
             validateRecipientname(recipientName) &&
             Recipientphonechange1(recipientNumber) &&
             validAmount(amount) &&
-            validSendername(senderName)&&
+            validSendername(senderName) &&
             validateRecipientname(recipientName) &&
             Senderphonechange1(senderNumber) &&
             ValidateEmail(senderMail);
-            
+
 
         if (isValid) {
             // All functions returned true, proceed with your logic
             console.log('All validations passed. Proceeding with logic...');
             sendOtp();
-            localStorage.setItem('displayvalue',displayvalue);
+            localStorage.setItem('displayvalue', displayvalue);
             // Call another function or perform additional actions
         } else {
             // At least one function returned false, handle accordingly
@@ -188,7 +189,7 @@ const Mobile_Number_Transfer = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + senderNumber,  // Make sure senderNumber is defined
                     message: otpMessage,
@@ -203,6 +204,9 @@ const Mobile_Number_Transfer = () => {
 
             alert("OTP sent successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("OTP send failed, please check Server");
         }
     };
@@ -238,7 +242,7 @@ const Mobile_Number_Transfer = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + recipientNumber,  // Make sure senderNumber is defined
                     message: moneyMessage,
@@ -253,6 +257,9 @@ const Mobile_Number_Transfer = () => {
 
             alert("Recipient SMS send successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("Recipient SMS send failed, please check Server");
         }
     };
@@ -262,7 +269,7 @@ const Mobile_Number_Transfer = () => {
 
     async function save(event) {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails",
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails",
                 {
                     username: user,
                     from: senderName,
@@ -276,7 +283,7 @@ const Mobile_Number_Transfer = () => {
                     senderaccount: senderAccount,
                     receiveraccount: recipientAccount,
                     sendermail: senderMail,
-                    status:"Sucess"
+                    status: "Sucess"
                 });
             alert("Save User Details Successfully");
 
@@ -296,7 +303,7 @@ const Mobile_Number_Transfer = () => {
         var body = "Hello " + senderName + ",\nYour Last Transaction Status:\nDate: " + currentDate + "\nTime: " + currentISTTime + "\nSender Name: " + senderName + "\nSender Number: " + senderNumber + "\nRecipent Name: " + recipientName + "\nRecipent Phone Number: " + recipientNumber + "\nAmount: " + amount + "\nType: " + type + "\nDescription: " + shortDescription + "\nStatus: Success";
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: senderMail,
                     subject: body,
@@ -322,21 +329,16 @@ const Mobile_Number_Transfer = () => {
         var div = document.getElementById(divId);
         div.style.display = 'block';
     }
-    document.body.style.overflow = 'hidden';
-    document.body.scrollIntoView({
-        behavior:'smooth',
-        block:'center',
-        inline:'center'
-    })
+
 
     return (
         <div>
             <section className="homepage_tab position-relative">
-                <div className="section1 container"style={{ marginTop: "80px" }}>
+                <div className="section1 container" style={{ marginTop: "80px" }}>
                     <div className="row1 justify-content-center">
                         <div className="col-lg-8 mb-4">
                             <div className="section-title1 text-center">
-                                <p className="text-primary text-uppercase fw-bold mb-3"style={{ fontSize: "20px" }}>Domestic Services</p>
+                                <p className="text-primary text-uppercase fw-bold mb-3" style={{ fontSize: "20px" }}>Domestic Services</p>
                                 <h1>Mobile Transfer</h1>
                             </div>
                         </div>
@@ -366,23 +368,23 @@ const Mobile_Number_Transfer = () => {
                                             <div className="content-block">
                                                 <h3 className="mb-4"><b>RECEIVER INFO</b></h3>
                                                 <div style={{ marginTop: "124px" }}><div className="form-group">
-                                                        <label for="your_name" ><i style={{ fontSize: "32px" }} className="zmdi zmdi-account material-icons-name "></i></label>
-                                                        <input type="text" name="recipientName" id="usernme" placeholder="Enter the Recipient Name"style={{ width: "400px" }}
-                                                            value={recipientName}
-                                                            onChange={(event) => {
-                                                                setRecipientName(event.target.value);
-                                                            }} required />
-                                                    </div>
+                                                    <label for="your_name" ><i style={{ fontSize: "32px" }} className="zmdi zmdi-account material-icons-name "></i></label>
+                                                    <input type="text" name="recipientName" id="usernme" placeholder="Enter the Recipient Name" style={{ width: "400px" }}
+                                                        value={recipientName}
+                                                        onChange={(event) => {
+                                                            setRecipientName(event.target.value);
+                                                        }} required />
+                                                </div>
                                                     <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "22px" }} className="fa fa-phone material-icons-name "></i></label>
-                                                        <input type="tel" name="recipientNumber" id="usernme" placeholder="Enter the Recipient Phone Number"style={{ width: "400px" }}
+                                                        <input type="tel" name="recipientNumber" id="usernme" placeholder="Enter the Recipient Phone Number" style={{ width: "400px" }}
                                                             value={recipientNumber}
                                                             onChange={(event) => { setPhoneNumber(event.target.value); }} required />
 
                                                     </div>
                                                     <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "22px" }} className="fa fa-money material-icons-name "></i></label>
-                                                        <input type="text" name="amount" id="usernme" placeholder="Enter the Amount"style={{ width: "400px" }}
+                                                        <input type="text" name="amount" id="usernme" placeholder="Enter the Amount" style={{ width: "400px" }}
                                                             value={amount}
                                                             onChange={(event) => {
                                                                 setAmount(event.target.value);
@@ -394,13 +396,13 @@ const Mobile_Number_Transfer = () => {
 
                                                     <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "22px" }} className="fa fa-sticky-note material-icons-name "></i></label>
-                                                        <input type="text" name="shortDescription" id="usernme" placeholder="Enter Short description"style={{ width: "400px" }}
+                                                        <input type="text" name="shortDescription" id="usernme" placeholder="Enter Short description" style={{ width: "400px" }}
                                                             value={shortDescription}
                                                             onChange={(event) => {
                                                                 setShortDescription(event.target.value);
                                                             }} />
                                                     </div></div>
-                                               
+
                                             </div>
                                         </div>
                                         <div className="col-md-6 order-0 order-md-1 mb-5 mt-md-0">
@@ -418,9 +420,9 @@ const Mobile_Number_Transfer = () => {
                                             <div className="content-block">
                                                 <h3 className="mb-4"><b>SENDER INFO</b></h3>
                                                 <div style={{ marginTop: "126px" }}>
-                                                <div className="form-group">
+                                                    <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "32px" }} className="zmdi zmdi-account material-icons-name "></i></label>
-                                                        <input type="text" name="senderName" id="usernme" placeholder="Enter the Sender Name"style={{ width: "400px" }}
+                                                        <input type="text" name="senderName" id="usernme" placeholder="Enter the Sender Name" style={{ width: "400px" }}
                                                             value={senderName}
                                                             onChange={(event) => {
                                                                 setsenderName(event.target.value);
@@ -429,7 +431,7 @@ const Mobile_Number_Transfer = () => {
 
                                                     <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "22px" }} className="fa fa-phone material-icons-name "></i></label>
-                                                        <input type="tel" name="senderNumber" id="usernme" placeholder="Enter the Sender Phone Number"style={{ width: "400px" }}
+                                                        <input type="tel" name="senderNumber" id="usernme" placeholder="Enter the Sender Phone Number" style={{ width: "400px" }}
                                                             value={senderNumber}
                                                             onChange={(event) => {
                                                                 setsenderNumber(event.target.value);
@@ -438,14 +440,14 @@ const Mobile_Number_Transfer = () => {
                                                     </div>
                                                     <div className="form-group">
                                                         <label for="your_name" ><i style={{ fontSize: "22px" }} className="fa fa-envelope"></i></label>
-                                                        <input type="email" name="senderMail" id="usernme" placeholder="Enter the Mail"style={{ width: "400px" }}
+                                                        <input type="email" name="senderMail" id="usernme" placeholder="Enter the Mail" style={{ width: "400px" }}
                                                             value={senderMail}
                                                             onChange={(event) => {
                                                                 setSenderMail(event.target.value);
                                                             }} required />
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div className="col-md-6 order-0 order-md-1 mb-5 mt-md-0">
@@ -461,16 +463,16 @@ const Mobile_Number_Transfer = () => {
                                     <div className="row1 align-items-center">
                                         <h3 className="mb-4"><b>CONFIRMATION</b><br /></h3>
                                         <div className="col-md-6 order-1 order-md-0">
-                                            <div>Recipient Name<span style={{paddingRight:"62px"}}></span> : {recipientName}</div>
+                                            <div>Recipient Name<span style={{ paddingRight: "62px" }}></span> : {recipientName}</div>
                                             <div>Recipient Phone Number : {recipientNumber}</div>
-                                            <div>Description<span style={{paddingRight:"92px"}}></span> : {shortDescription}</div>
-                                            <div>Sender Name<span style={{paddingRight:"78px"}}></span> : {senderName}</div>
-                                            <div>Sender Mail <span style={{paddingRight:"88px"}}></span>: {senderMail}</div>
-                                            <div>Sender Phone Number <span style={{paddingRight:"16px"}}></span>: {senderNumber}</div>
-                                            <div>Amount<span style={{paddingRight:"114px"}}></span> : {amount}</div>
+                                            <div>Description<span style={{ paddingRight: "92px" }}></span> : {shortDescription}</div>
+                                            <div>Sender Name<span style={{ paddingRight: "78px" }}></span> : {senderName}</div>
+                                            <div>Sender Mail <span style={{ paddingRight: "88px" }}></span>: {senderMail}</div>
+                                            <div>Sender Phone Number <span style={{ paddingRight: "16px" }}></span>: {senderNumber}</div>
+                                            <div>Amount<span style={{ paddingRight: "114px" }}></span> : {amount}</div>
                                             <div style={{ display: "flex", gap: "10px" }}>
                                                 {" "}
-                                                <div style={{ marginTop: "24px" }}>Enter OTP <span style={{paddingRight:"104px"}}/> :</div>
+                                                <div style={{ marginTop: "24px" }}>Enter OTP <span style={{ paddingRight: "104px" }} /> :</div>
                                                 <div>
                                                     {" "}
                                                     <input
@@ -486,11 +488,11 @@ const Mobile_Number_Transfer = () => {
                                                     />
                                                 </div>
                                             </div>
-                                                        <br />
+                                            <br />
                                             {/* <div>  <input type="text" placeholder="Enter OTP" value={userInput} onChange={handleUserInput} style={{ "margin-top": "10px", width: "140px", marginLeft: "160px" }} /></div> */}
                                             <div>
                                                 <input type="submit" name="signin" id="signin" className="form-submit" value="CONFIRM" onClick={multifunctioncall} style={{ "margin-right": "110px", "margin-left": "40px" }} /> <span></span>
-                                                {display?<><input type="submit" name="signin" id="signin" className="form-submit" value="PAY" onClick={pay} style={{ margin: "0px" }} /></>:<></>  }</div>
+                                                {display ? <><input type="submit" name="signin" id="signin" className="form-submit" value="PAY" onClick={pay} style={{ margin: "0px" }} /></> : <></>}</div>
                                             {/* <
                                             {/* <div>  <input type="text" placeholder="Enter OTP" value={userInput} onChange={handleUserInput} style={{ "margin-top": "10px" }} /></div>
                                             <div>  <input type="submit" name="signin" id="signin" className="form-submit" value="CONFIRM" onClick={multifunctioncall} style={{ "margin-right": "130px", "margin-left": "50px" }} /> <span></span>

@@ -8,7 +8,7 @@ const UPI_Transfer = () => {
     const display = localStorage.getItem('displayvalue');
     const user = localStorage.getItem('username');
 
-
+    document.body.style.overflow = 'visible';
 
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -221,7 +221,7 @@ const UPI_Transfer = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + senderNumber,  // Make sure senderNumber is defined
                     message: otpMessage,
@@ -236,6 +236,9 @@ const UPI_Transfer = () => {
 
             alert("OTP sent successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("OTP send failed, please check Server");
         }
     };
@@ -271,7 +274,7 @@ const UPI_Transfer = () => {
         try {
             // Send OTP via API
             await axios.post(
-                "http://localhost:8881/api/v1/sms",
+                "https://easypayexpress.onrender.com/api/v1/sms",
                 {
                     phoneNumber: "+91" + recipientNumber,  // Make sure senderNumber is defined
                     message: moneyMessage,
@@ -286,6 +289,9 @@ const UPI_Transfer = () => {
 
             alert("Recipient SMS send successfully");
         } catch (err) {
+            if(err.status==undefined){
+                alert("this free Service only for register numbers");
+            }
             alert("Recipient SMS send failed, please check Server");
         }
     };
@@ -295,7 +301,7 @@ const UPI_Transfer = () => {
 
     async function save(event) {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails",
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails",
                 {
                     username: user,
                     from: senderName,
@@ -330,7 +336,7 @@ const UPI_Transfer = () => {
         var body = "Hello " + senderName + ",\nYour Last Transaction Status:\nDate: " + currentDate + "\nTime: " + currentISTTime + "\nSender Name: " + senderName + "\nSender UPI: " + senderUPI + "\nSender Number: " + senderNumber + "\nRecipent Name: " + recipientName + "\nRecipent UPI: " + recipientUPI + "\nAmount: " + amount + "\nType: " + type + "\nDescription: " + shortDescription + "\nStatus: Success";
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: senderMail,
                     subject: body,

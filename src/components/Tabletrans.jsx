@@ -18,7 +18,8 @@ const user=localStorage.getItem('username');
   const [userinfos, setUsers] = useState([]);
 
 
-  const getall = "http://localhost:8881/api/users/getUserDetails/" + user;
+  // const getall = "http://localhost:8881/api/users/getUserDetails/" + user;
+  const getall = "https://easypayexpress.onrender.com/api/users/getUserDetails/" + user;
 
   useEffect(() => {
     (async () => await Load())();

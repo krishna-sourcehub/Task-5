@@ -7,8 +7,8 @@ const Terms = () => {
     window.close();
   }
   return (
-    <div className="container2">
-      <h2>Terms and Conditions</h2>
+    <div className="container2" style={{marginTop:'100px'}}>
+      <h2 className='termshead'>Terms and Conditions</h2>
 
       <p>Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use...</p>
 

@@ -152,7 +152,7 @@ const Signup = () => {
          mobile="+9197"+generateMobile();
        
         try {
-            const response = await axios.post('http://localhost:8881/api/users/saveuser', {
+            const response = await axios.post('https://easypayexpress.onrender.com/api/users/saveuser', {
                 username: username,
                 password: password,
                 email: email,
@@ -192,7 +192,7 @@ const Signup = () => {
 var type="Wallet Transfer"
     async function transaction() {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails",
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails",
                 {
                     username: username,
                     from: username,
@@ -228,7 +228,7 @@ var type="Wallet Transfer"
         EasyPay Express Team`
         try {
             await axios.post(
-                "http://localhost:8881/api/email/send",
+                "https://easypayexpress.onrender.com/api/email/send",
                 {
                     recipient: email,
                     subject: body,

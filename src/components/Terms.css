@@ -4,8 +4,12 @@ body {
     padding: 20px;
 }
 
-h2 {
+.termshead {
     color: #333;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 180px;
 }
 h3{
     padding: 2px;
