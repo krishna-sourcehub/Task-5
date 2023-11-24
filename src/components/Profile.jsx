@@ -26,10 +26,10 @@ const currentISTTime = currentDateTime.toLocaleString('en-US', {
     timeZone: 'Asia/Kolkata',
 });
 
-const getProfile="http://localhost:8881/api/users/getProfileData/"+userid;
-const deleteProfile="http://localhost:8881/api/users/delete/"+userid;
-const editProfile="http://localhost:8881/api/users/edit/"+userid;
-const editwallet="http://localhost:8881/api/users/edit/"+userid;
+const getProfile="https://easypayexpress.onrender.com/api/users/getProfileData/"+userid;
+const deleteProfile="https://easypayexpress.onrender.com/api/users/delete/"+userid;
+const editProfile="https://easypayexpress.onrender.com/api/users/edit/"+userid;
+const editwallet="https://easypayexpress.onrender.com/api/users/edit/"+userid;
 
 
 useEffect(() => {
@@ -211,7 +211,7 @@ async function addBalance(){
 var type="Wallet Transfer"
     async function transaction() {
         try {
-            await axios.post("http://localhost:8881/api/users/saveUserDetails",
+            await axios.post("https://easypayexpress.onrender.com/api/users/saveUserDetails",
                 {
                     username: profiledata.username,
                     from: profiledata.username,
