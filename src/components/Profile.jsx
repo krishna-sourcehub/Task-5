@@ -11,6 +11,7 @@ var amount;
 const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
 useEffect(() => {
+
     const intervalId = setInterval(() => {
         setCurrentDateTime(new Date());
     }, 1000); // Update every second
@@ -281,12 +282,13 @@ async function deleteaccount(){
 
 }
 
-        document.body.style.overflow = 'hidden';
-        document.body.scrollIntoView({
-            behavior:'smooth',
-            block:'center',
-            inline:'center'
-        })
+        // document.body.style.overflow = 'hidden';
+        // document.body.scrollIntoView({
+        //     behavior:'smooth',
+        //     block:'center',
+        //     inline:'center'
+        // })
+        document.body.style.overflow = 'visible';
 
         return (
             <div>
@@ -301,12 +303,13 @@ async function deleteaccount(){
                                     <p>Efficiently transfer money within the country with <br />our domestic services.</p>
                                 </div>
                             </div>
+                            
                     <div style={{display:"flex",flexFlow:"row", gap:"80px"}}>
                    
                         
                         <div className="col-lg-41 col-md-6 service-item" style={{marginTop:"10px", marginLeft:"1px", width:"600px", height:"300px"}}>
             
-            <div className="block" onClick={addBalance}> <span className="colored-box text-center h3 mb-4" style={{width:"200px"}}>
+            <div className="block" onClick={addBalance}> <span className="colored-box text-center h3 mb-4" style={{width:"200px", marginTop:"0px"}}>
 
 
                 Add Balance
@@ -327,18 +330,18 @@ async function deleteaccount(){
                     <h3 className="mb-3 service-title"style={{padding:"10px"}}>Phone Number <span style={{paddingLeft:"28px"}}/>:{" "+profiledata.phonenumber}</h3>
                     <h3 className="mb-3 service-title"style={{padding:"10px"}}>EasyPay ID<span style={{paddingLeft:"74px"}}/>:{" "+profiledata.id}</h3>
                     <h3 className="mb-3 service-title"style={{padding:"10px"}}>Account (Default)<span style={{paddingLeft:"10px"}}/>:{" "+profiledata.account}</h3>
-                    <div style={{display:"flex", gap:"100px", marginLeft:"40px"}}><div className="form-group form-button">
+                    <div style={{display:"flex", gap:"100px", marginLeft:"25px"}}><div className="form-group form-button">
                                             <div className="form-group form-button" to="/Login">
                                                 <input type="submit" name="signup" id="signup" className="form-submit" value="Change Password" onClick={changepassword} />
                                             </div>
                                         </div>
-                                        <div className="form-group form-button" style={{marginLeft:"80px"}}>
+                                        <div className="form-group form-button" style={{marginLeft:"60px", }}>
                                             <div className="form-group form-button" to="/Login">
                                                 <input type="submit" name="signup" id="signup" className="form-submit" value="Delete Account" onClick={deleteaccount} />
                                             </div>
-                                        </div></div>
+                                        </div>
+                                        </div>
                 </div>
-    
       
                 
         </div>
