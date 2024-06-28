@@ -4,7 +4,7 @@ export const Features = (props) => {
   return (
     <div id="features" className="text-center">
       <div className="container">
-        <div className="col-md-10 col-md-offset-1 section-title">
+        <div className="col-md-101 col-md-offset-1 section-title">
     
           <h2 style={{marginTop:"100px"}}>Features</h2>
         </div>
